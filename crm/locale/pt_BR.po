@@ -281,6 +281,13 @@ msgstr "Já existe uma regra para {0}"
 msgid "A section can have up to {0} columns"
 msgstr "Uma seção pode ter até {0} colunas"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule_pattern/crm_enrichment_rule_pattern.json:14
+msgid ""
+"A substring (default) or a regular expression matched against the rule's "
+"match scope."
+msgstr ""
+"Trecho de texto (padrão) ou expressão regular comparado ao escopo da regra."
+
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowFilters.vue:39
 msgid "A trigger runs only when these filters match."
 msgstr "Um gatilho só é executado quando estes filtros são atendidos."
@@ -791,9 +798,31 @@ msgstr "Todas as prioridades disponíveis já foram adicionadas"
 msgid "All filters must match."
 msgstr "Todos os filtros devem ser atendidos."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:144
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:144
+msgid "Allowed Domains"
+msgstr "Domínios permitidos"
+
 #: frontend/src/components/Settings/Forms/FormBuilderPanel.vue:470
 msgid "Allowed domains"
 msgstr "Domínios permitidos"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:147
+msgid ""
+"Allowlist (subdomain-aware). If you add any domains here, the crawler may "
+"ONLY visit those domains and their subdomains — everything else is rejected "
+"by the SSRF guard. Leave empty (the normal case) to allow any public site; "
+"this is for locked-down deployments that should reach only specific domains."
+msgstr ""
+"Lista de permissão que considera subdomínios. Se houver domínios nesta "
+"lista, o rastreador poderá visitar SOMENTE esses domínios e seus "
+"subdomínios; os demais serão rejeitados pela proteção contra SSRF. Deixe "
+"vazia para permitir qualquer site público. Use em instalações restritas que "
+"devam acessar apenas domínios específicos."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:1
+msgid "Always refresh"
+msgstr "Atualizar sempre"
 
 #. Label of the amount (Currency) field in DocType 'CRM Products'
 #: crm/fcrm/doctype/crm_products/crm_products.json
@@ -1287,6 +1316,18 @@ msgstr ""
 msgid "Autocomplete"
 msgstr "Preenchimento automático"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:51
+msgid ""
+"Automatically enrich a new CRM Lead, Deal or Organization in the background "
+"as soon as it is created (requires a website on the record). Only applies to"
+" the doctypes enabled above. When off, enrichment is triggered manually with"
+" the Enrich button."
+msgstr ""
+"Enriquecer automaticamente um novo lead, negócio ou organização em segundo "
+"plano assim que for criado (o registro precisa ter um site). Aplica-se "
+"somente aos tipos de documento habilitados acima. Quando desativado, o "
+"enriquecimento é iniciado manualmente pelo botão Enriquecer."
+
 #: frontend/src/components/Settings/Enrichment/GeneralTab.vue:66
 msgid ""
 "Automatically enrich new Leads, Deals and Organizations in the background "
@@ -1524,6 +1565,11 @@ msgid ""
 msgstr ""
 "Sincronização bidirecional dos produtos existentes do CRM e itens do "
 "ERPNext. Executada em segundo plano."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:156
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:156
+msgid "Blocked Domains"
+msgstr "Domínios bloqueados"
 
 #: frontend/src/components/Settings/Settings.vue:137
 msgid "Brand"
@@ -2002,6 +2048,11 @@ msgstr "Altere o fuso horário do aplicativo."
 msgid "Change your account password for security."
 msgstr "Altere a senha da sua conta para maior segurança."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:159
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:159
+msgid "Changes"
+msgstr "Alterações"
+
 #: frontend/src/pages/Dashboard.vue:22
 msgid "Chart"
 msgstr "Gráfico"
@@ -2257,10 +2308,21 @@ msgstr "Descrição da empresa"
 msgid "Company Name"
 msgstr "Nome da Empresa"
 
+#: crm/fcrm/doctype/crm_organization/crm_organization.json:98
+#: crm/fcrm/doctype/crm_deal/crm_deal.json:491
+#: crm/fcrm/doctype/crm_lead/crm_lead.json:455
+msgid "Company description discovered by Domain Enrichment."
+msgstr "Descrição da empresa obtida pelo enriquecimento de dados por domínio."
+
 #. Label of the erpnext_company (Data) field in DocType 'ERPNext CRM Settings'
 #: crm/fcrm/doctype/erpnext_crm_settings/erpnext_crm_settings.json
 msgid "Company in ERPNext site"
 msgstr "Empresa no site ERPNext"
+
+#: crm/fcrm/doctype/crm_deal/crm_deal.json:484
+#: crm/fcrm/doctype/crm_lead/crm_lead.json:448
+msgid "Company logo discovered by Domain Enrichment."
+msgstr "Logo da empresa obtida pelo enriquecimento de dados por domínio."
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:517
 msgid "Company name is required"
@@ -2706,6 +2768,27 @@ msgstr "Não foi possível atualizar o superior imediato"
 msgid "Count"
 msgstr "Contagem"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:59
+msgid "Crawl"
+msgstr "Rastreamento"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:116
+msgid "Crawl Tuning"
+msgstr "Ajustes de rastreamento"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:119
+msgid ""
+"Crawl-ordering hints (not extraction). Links whose URL path or anchor text "
+"contain one of these are fetched first; higher weight = sooner. Lets the "
+"crawler spend its page budget on company pages (about/contact/team) before "
+"the cap. Defaults are seeded; edit or remove as needed."
+msgstr ""
+"Critérios de ordenação do rastreamento (não de extração). Links cujo caminho"
+" ou texto contenha um destes termos são acessados primeiro; quanto maior o "
+"peso, maior a prioridade. Isso permite priorizar páginas sobre a empresa, "
+"contato e equipe antes de atingir o limite. Os padrões são preenchidos "
+"inicialmente; edite ou remova conforme necessário."
+
 #: frontend/src/components/Modals/ContactModal.vue:41
 #: frontend/src/components/Modals/CreateDocumentModal.vue:88
 #: frontend/src/components/Modals/DealModal.vue:65
@@ -2742,6 +2825,10 @@ msgstr "Criar lead"
 #: frontend/src/components/Settings/emailConfig.js:58
 msgid "Create Lead from Incoming Emails"
 msgstr "Criar lead a partir de e-mails recebidos"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:78
+msgid "Create Missing Link"
+msgstr "Criar registro vinculado ausente"
 
 #: frontend/src/components/Controls/Link.vue:50
 #: frontend/src/components/Modals/EmailTemplateSelectorModal.vue:58
@@ -3200,6 +3287,10 @@ msgstr "Envio e caixa de entrada padrão"
 msgid "Default Service Level Agreement already exists for {0}"
 msgstr "Já existe um acordo de nível de serviço padrão para {0}"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:85
+msgid "Default Values"
+msgstr "Valores padrão"
+
 #: frontend/src/components/Settings/CalendarSettings.vue:34
 msgid "Default View"
 msgstr "Visualização Padrão"
@@ -3350,6 +3441,19 @@ msgstr "Excluindo anotação..."
 #: crm/fcrm/doctype/fcrm_settings/fcrm_settings.js:58
 msgid "Demo data restored successfully."
 msgstr "Dados de demonstração restaurados com sucesso."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:159
+msgid ""
+"Denylist (subdomain-aware). A host that equals or is a subdomain of any "
+"entry is always rejected by the SSRF guard — e.g. blocking \"acme.com\" also"
+" blocks \"shop.acme.com\". Use it to permanently exclude internal domains, "
+"known-bad hosts, or link shorteners. Always wins over the allowlist."
+msgstr ""
+"Lista de bloqueio que considera subdomínios. Um endereço igual a uma entrada"
+" ou pertencente a um subdomínio dela será sempre rejeitado; por exemplo, "
+"bloquear \"acme.com\" também bloqueia \"shop.acme.com\". Use para excluir "
+"domínios internos, endereços maliciosos conhecidos ou encurtadores de links."
+" Tem prioridade sobre a lista de permissão."
 
 #. Label of the description (Text Editor) field in DocType 'CRM Holiday'
 #. Label of the description (Text Editor) field in DocType 'CRM Lost Reason'
@@ -3518,6 +3622,10 @@ msgstr "Documento atualizado com sucesso"
 #: frontend/src/components/Modals/AboutModal.vue:60
 msgid "Documentation"
 msgstr "Documentação"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_domain/crm_enrichment_domain.json:16
+msgid "Domain"
+msgstr "Domínio"
 
 #. Option for the 'Status' (Select) field in DocType 'CRM Task'
 #: crm/fcrm/doctype/crm_task/crm_task.json
@@ -3930,6 +4038,10 @@ msgstr "E-mails"
 #: frontend/src/components/Settings/Profile/ProfileSettings.vue:96
 msgid "Emails & Signature"
 msgstr "E-mails e assinatura"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:140
+msgid "Emails Found"
+msgstr "E-mails encontrados"
 
 #: frontend/src/components/Settings/Forms/FormBuilderPanel.vue:420
 msgid "Embed"
@@ -4700,6 +4812,18 @@ msgstr "Valores dos campos"
 msgid "Field value changes"
 msgstr "Alterações no valor do campo"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:162
+msgid ""
+"Field values this run wrote to the reference record, kept so the run can be "
+"undone."
+msgstr ""
+"Valores gravados por esta execução no registro de referência, preservados "
+"para permitir desfazê-la."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run_change/crm_enrichment_run_change.json:18
+msgid "Fieldname"
+msgstr "Nome do campo"
+
 #: frontend/src/components/Controls/GridFieldsEditorModal.vue:19
 #: frontend/src/components/Kanban/KanbanSettings.vue:47
 msgid "Fields Order"
@@ -4726,6 +4850,21 @@ msgstr ""
 msgid "File \"{0}\" was skipped because size exceeds {1} MB"
 msgstr "O arquivo \"{0}\" foi ignorado porque o tamanho excede {1} MB"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:65
+msgid "Fill if empty"
+msgstr "Preencher se vazio"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:66
+msgid ""
+"Fill if empty: only write when the field is blank. Always refresh: overwrite"
+" on every run (for fully enrichment-derived fields). Override defaults: "
+"write even when the current value is a known default (see Default Values)."
+msgstr ""
+"Preencher se vazio: gravar somente quando o campo estiver vazio. Atualizar "
+"sempre: sobrescrever em cada execução (para campos derivados integralmente "
+"do enriquecimento). Substituir valores padrão: gravar mesmo quando o valor "
+"atual for um padrão conhecido (consulte Valores padrão)."
+
 #: frontend/src/components/Settings/Enrichment/GeneralTab.vue:10
 msgid ""
 "Fill in company details on Leads, Deals and Organizations from their "
@@ -4751,6 +4890,10 @@ msgstr "Filtros"
 #: frontend/src/components/Questionnaire.vue:96
 msgid "Finish"
 msgstr "Finalizar"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:88
+msgid "Finished On"
+msgstr "Concluído em"
 
 #. Label of the first_name (Data) field in DocType 'CRM Lead'
 #: crm/fcrm/doctype/crm_lead/crm_lead.json
@@ -4977,6 +5120,10 @@ msgstr "Cumprido"
 msgid "Full Name"
 msgstr "Nome Completo"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:73
+msgid "Full Text"
+msgstr "Texto completo"
+
 #: frontend/src/components/Dashboard/AddChartModal.vue:92
 msgid "Funnel Conversion"
 msgstr "Conversão do funil"
@@ -5091,9 +5238,17 @@ msgstr ""
 "Visitantes não podem ver registros de {0}. Conceda permissão de seleção para"
 " listá-los publicamente."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:1
+msgid "HTML"
+msgstr "HTML"
+
 #: frontend/src/components/Telephony/TwilioCallUI.vue:63
 msgid "Hang Up"
 msgstr "Desligar"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:1
+msgid "Headline"
+msgstr "Título principal"
 
 #: crm/templates/emails/helpdesk_invitation.html:2
 msgid "Hello"
@@ -5293,6 +5448,14 @@ msgstr "Quando habilitado, os e-mails serão recebidos por esta conta."
 msgid "If enabled, outgoing emails can be sent from this account."
 msgstr "Quando habilitado, esta conta poderá enviar e-mails."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:75
+msgid ""
+"If the value names a missing linked record (e.g. a CRM Industry), create it."
+" Opt-in only."
+msgstr ""
+"Se o valor indicar um registro vinculado inexistente (por exemplo, um setor "
+"do CRM), criá-lo. Requer ativação explícita."
+
 #. Label of the image (Attach Image) field in DocType 'CRM Lead'
 #. Label of the image (Attach Image) field in DocType 'CRM Product'
 #: crm/fcrm/doctype/crm_lead/crm_lead.json
@@ -5363,6 +5526,10 @@ msgstr "Setores"
 #: crm/fcrm/doctype/crm_organization/crm_organization.json
 msgid "Industry"
 msgstr "Setor de Atuação"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:129
+msgid "Industry Confidence"
+msgstr "Confiança na classificação do setor"
 
 #: frontend/src/components/Settings/Enrichment/useIndustryRules.ts:129
 msgid "Industry is required"
@@ -5631,6 +5798,10 @@ msgstr "É Grupo"
 msgid "Is Primary"
 msgstr "É Primário"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule_pattern/crm_enrichment_rule_pattern.json:27
+msgid "Is Regex"
+msgstr "É expressão regular"
+
 #. Label of the is_standard (Check) field in DocType 'CRM Dropdown Item'
 #. Label of the is_standard (Check) field in DocType 'CRM Form Script'
 #. Label of the is_standard (Check) field in DocType 'CRM View Settings'
@@ -5745,6 +5916,10 @@ msgstr "Manter meu funil organizado"
 #: crm/lead_syncing/doctype/facebook_lead_form_question/facebook_lead_form_question.json
 msgid "Key"
 msgstr "Chave"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_link_priority/crm_enrichment_link_priority.json:18
+msgid "Keyword"
+msgstr "Palavra-chave"
 
 #: frontend/src/components/Settings/Enrichment/RulesTab.vue:111
 msgid "Keywords"
@@ -6059,6 +6234,10 @@ msgstr "Semelhante"
 msgid "Link"
 msgstr "Vincular"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:122
+msgid "Link Priority Order"
+msgstr "Ordem de prioridade dos links"
+
 #: crm/fcrm/doctype/crm_product/reconcile_job.py:100
 msgid "Linked Item {0} no longer exists"
 msgstr "O item vinculado {0} não existe mais"
@@ -6353,9 +6532,41 @@ msgstr "Marcar tudo como lido"
 msgid "Mark lead/deal as replied on response"
 msgstr "Marcar lead ou negócio como respondido ao receber uma resposta"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:39
+msgid "Master switch for the Domain Enrichment feature."
+msgstr "Controle principal do recurso de enriquecimento de dados por domínio."
+
 #: frontend/src/components/Layouts/AppSidebar.vue:577
 msgid "Masters"
 msgstr "Cadastros"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:77
+msgid "Match Scope"
+msgstr "Escopo da correspondência"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:73
+msgid "Max Depth"
+msgstr "Profundidade máxima"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:98
+msgid "Max Download Bytes"
+msgstr "Máximo de bytes por download"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:66
+msgid "Max Pages"
+msgstr "Máximo de páginas"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:95
+msgid "Maximum bytes downloaded per page (the stream is capped)."
+msgstr "Número máximo de bytes baixados por página (o fluxo é limitado)."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:70
+msgid "Maximum link depth followed from the homepage."
+msgstr "Profundidade máxima dos links seguidos a partir da página inicial."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:63
+msgid "Maximum number of pages crawled per enrichment."
+msgstr "Número máximo de páginas rastreadas por enriquecimento."
 
 #: frontend/src/components/Settings/Enrichment/GeneralTab.vue:33
 msgid ""
@@ -6688,6 +6899,10 @@ msgstr "Nova Tarefa"
 msgid "New Template"
 msgstr "Novo modelo"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run_change/crm_enrichment_run_change.json:33
+msgid "New Value"
+msgstr "Novo valor"
+
 #: frontend/src/components/Modals/ConvertToDealModal.vue:67
 msgid "New contact will be created based on the person's details"
 msgstr "Um novo contato será criado com base nos dados da pessoa"
@@ -6726,6 +6941,14 @@ msgstr "Novo {0}"
 #: frontend/src/components/Settings/GeneralSettings.vue:144
 msgid "Newest First"
 msgstr "Mais recentes primeiro"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:82
+msgid ""
+"Newline-separated values treated as \"unset\" defaults that may be "
+"overwritten, in addition to a truly empty field."
+msgstr ""
+"Valores separados por quebras de linha tratados como padrões não definidos "
+"que podem ser sobrescritos, além dos campos vazios."
 
 #: frontend/src/components/Filter.vue:713
 msgid "Next 6 Months"
@@ -7263,6 +7486,10 @@ msgstr ""
 msgid "Number of decimal places used for all currency values"
 msgstr "Número de casas decimais usado para todos os valores monetários"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:102
+msgid "Number of retries on a failed request."
+msgstr "Número de novas tentativas após uma requisição falhar."
+
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRuleView.vue:167
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRuleView.vue:251
 msgid "Old Condition"
@@ -7278,6 +7505,10 @@ msgstr "Condições antigas"
 #: crm/fcrm/doctype/crm_territory/crm_territory.json
 msgid "Old Parent"
 msgstr "Superior anterior"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run_change/crm_enrichment_run_change.json:26
+msgid "Old Value"
+msgstr "Valor anterior"
 
 #. Option for the 'Timeline Sort Order' (Select) field in DocType 'FCRM
 #. Settings'
@@ -7528,6 +7759,10 @@ msgstr "Saída"
 msgid "Output of {0}"
 msgstr "Saída de {0}"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:1
+msgid "Override defaults"
+msgstr "Substituir valores padrão"
+
 #. Label of the log_owner (Link) field in DocType 'CRM Status Change Log'
 #: crm/fcrm/doctype/crm_status_change_log/crm_status_change_log.json
 msgid "Owner"
@@ -7611,6 +7846,11 @@ msgstr "Padrão"
 msgid "Pattern is required"
 msgstr "O padrão é obrigatório"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:83
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:83
+msgid "Patterns"
+msgstr "Padrões"
+
 #: frontend/src/components/Settings/WorkflowAutomations/workflowGraph.js:116
 msgid "Pause the run"
 msgstr "Pausar a execução"
@@ -7645,6 +7885,10 @@ msgstr "Pendente"
 #: frontend/src/components/Settings/InviteUserPage.vue:61
 msgid "Pending Invites"
 msgstr "Convites pendentes"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:77
+msgid "Per-request timeout in seconds."
+msgstr "Tempo limite de cada requisição, em segundos."
 
 #: frontend/src/pages/Dashboard.vue:66
 msgid "Period"
@@ -7694,6 +7938,10 @@ msgstr "Números de telefone"
 msgid "Phone calls"
 msgstr "Chamadas telefônicas"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:147
+msgid "Phones Found"
+msgstr "Telefones encontrados"
+
 #: crm/automation/actions.py:225
 msgid "Pick a template or write a subject"
 msgstr "Escolha um modelo ou escreva um assunto"
@@ -7731,6 +7979,14 @@ msgstr "Fixar no topo"
 #: crm/fcrm/doctype/crm_view_settings/crm_view_settings.json
 msgid "Pinned"
 msgstr "Fixado"
+
+#: crm/fcrm/doctype/fcrm_note/fcrm_note.json:58
+msgid "Pinned By"
+msgstr "Fixado por"
+
+#: crm/fcrm/doctype/fcrm_note/fcrm_note.json:66
+msgid "Pinned On"
+msgstr "Fixado em"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:601
 msgid "Pinned View"
@@ -8111,6 +8367,14 @@ msgstr "Cotações"
 msgid "Rate"
 msgstr "Preço Unitário"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:172
+msgid "Raw"
+msgstr "Dados brutos"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:177
+msgid "Raw JSON"
+msgstr "JSON bruto"
+
 #: frontend/src/components/EnrichFromWebsite.vue:304
 msgid "Re-enrich this record?"
 msgstr "Enriquecer este registro novamente?"
@@ -8404,6 +8668,10 @@ msgstr "Relatórios e previsões"
 msgid "Reports To"
 msgstr "Superior imediato"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:80
+msgid "Request Timeout (s)"
+msgstr "Tempo limite da requisição (s)"
+
 #: frontend/src/components/Settings/Forms/FieldCard.vue:84
 msgid "Required"
 msgstr "Obrigatório"
@@ -8538,6 +8806,10 @@ msgstr "Refazer"
 msgid "Retry"
 msgstr "Tentar novamente"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:105
+msgid "Retry Count"
+msgstr "Número de novas tentativas"
+
 #: crm/lead_syncing/doctype/failed_lead_sync_log/failed_lead_sync_log.js:6
 #: frontend/src/components/Settings/LeadSyncing/FailureLogs.vue:16
 msgid "Retry Sync"
@@ -8550,6 +8822,10 @@ msgstr "Negócio {0} reutilizado"
 #: crm/api/dashboard.py:727
 msgid "Revenue"
 msgstr "Receita"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:1
+msgid "Reverted"
+msgstr "Revertido"
 
 #: frontend/src/components/Settings/EmailTemplate/EditEmailTemplate.vue:81
 #: frontend/src/components/Settings/EmailTemplate/NewEmailTemplate.vue:81
@@ -8634,6 +8910,14 @@ msgstr "Linha {0}"
 msgid "Rows"
 msgstr "Linhas"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:28
+msgid "Rule Name"
+msgstr "Nome da regra"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:36
+msgid "Rule Type"
+msgstr "Tipo de regra"
+
 #: frontend/src/components/Settings/Enrichment/EnrichmentSettings.vue:96
 msgid "Rules"
 msgstr "Regras"
@@ -8675,6 +8959,10 @@ msgstr ""
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowFlow.vue:233
 msgid "Run {0}"
 msgstr "Executar {0}"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:1
+msgid "Running"
+msgstr "Em execução"
 
 #. Label of the sla_tab (Tab Break) field in DocType 'CRM Deal'
 #. Label of the sla (Link) field in DocType 'CRM Deal'
@@ -8763,6 +9051,10 @@ msgstr "Política de SLA atualizada"
 #: frontend/src/components/Settings/Sla/SlaPolicyView.vue:372
 msgid "SLA set as default cannot be disabled"
 msgstr "Um SLA definido como padrão não pode ser desabilitado"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:139
+msgid "SSRF Guard"
+msgstr "Proteção contra SSRF"
 
 #: frontend/src/components/EmailEditor.vue:102
 msgid "SUBJECT"
@@ -8961,6 +9253,12 @@ msgstr "Agendar uma tarefa..."
 msgid "Schedule an Event"
 msgstr "Agendar um evento"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:67
+msgid ""
+"Score contributed per matched pattern (Industry classification scoring)."
+msgstr ""
+"Pontuação atribuída a cada padrão correspondente na classificação do setor."
+
 #. Label of the script (Code) field in DocType 'CRM Form Script'
 #: crm/fcrm/doctype/crm_form_script/crm_form_script.json
 msgid "Script"
@@ -9023,6 +9321,20 @@ msgstr "Título da seção"
 #: frontend/src/components/Calendar/CalendarEventPanel.vue:232
 msgid "See All Participants"
 msgstr "Ver todos os participantes"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:84
+msgid ""
+"Seed the crawl queue from the site's sitemap (declared in robots.txt, or the"
+" conventional /sitemap.xml) so pages not reachable within Max Depth still "
+"get a chance to be crawled. This is an addition on top of ordinary link-"
+"following, not a replacement -- a site with no sitemap falls straight "
+"through to link-following with no error."
+msgstr ""
+"Iniciar a fila de rastreamento com o mapa do site (declarado no robots.txt "
+"ou no caminho convencional /sitemap.xml) para também alcançar páginas além "
+"da profundidade máxima. Isso complementa o rastreamento normal de links. Se "
+"o site não tiver um mapa, o rastreamento de links prossegue normalmente, sem"
+" erro."
 
 #: frontend/src/components/SidePanelLayout.vue:154
 msgid "Select"
@@ -9570,9 +9882,21 @@ msgstr ""
 msgid "Skip"
 msgstr "Pular"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:133
+msgid "Skip Patterns"
+msgstr "Padrões a ignorar"
+
 #: frontend/src/components/Questionnaire.vue:97
 msgid "Skip for now"
 msgstr "Pular por enquanto"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:1
+msgid "Social"
+msgstr "Rede social"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:153
+msgid "Social Profiles"
+msgstr "Perfis em redes sociais"
 
 #: frontend/src/components/Settings/Enrichment/RulesTab.vue:10
 msgid "Social profile rules"
@@ -9635,6 +9959,10 @@ msgstr "Ordenar"
 msgid "Source"
 msgstr "Origem"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:34
+msgid "Source Key"
+msgstr "Chave de origem"
+
 #. Label of the source_name (Data) field in DocType 'CRM Lead Source'
 #: crm/fcrm/doctype/crm_lead_source/crm_lead_source.json
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSourceForm.vue:73
@@ -9644,6 +9972,10 @@ msgstr "Nome da Fonte"
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSourceForm.vue:56
 msgid "Source Type"
 msgstr "Tipo de Origem"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:71
+msgid "Source Website"
+msgstr "Site de origem"
 
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSources.vue:159
 msgid "Source disabled successfully"
@@ -9764,6 +10096,10 @@ msgstr "O horário de início é obrigatório"
 msgid "Start with sample 10 leads"
 msgstr "Começar com 10 leads de exemplo"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:82
+msgid "Started On"
+msgstr "Iniciado em"
+
 #. Label of the status (Select) field in DocType 'CRM Call Log'
 #. Label of the status (Data) field in DocType 'CRM Communication Status'
 #. Label of the status (Link) field in DocType 'CRM Deal'
@@ -9845,9 +10181,33 @@ msgstr "Enviar"
 msgid "Submit button label"
 msgstr "Rótulo do botão de envio"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_link_priority/crm_enrichment_link_priority.json:14
+msgid ""
+"Substring matched against a candidate URL/anchor to prioritise crawling it "
+"(e.g. \"about\", \"team\", \"contact\")."
+msgstr ""
+"Trecho de texto comparado à URL ou ao texto do link para priorizar seu "
+"rastreamento (por exemplo, \"about\", \"team\", \"contact\")."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_skip_pattern/crm_enrichment_skip_pattern.json:13
+msgid ""
+"Substring; a candidate URL containing it is skipped during the crawl (e.g. "
+"\"/blog/\", \".pdf\", \"?\")."
+msgstr ""
+"Trecho de texto: URLs que o contenham são ignoradas durante o rastreamento "
+"(por exemplo, \"/blog/\", \".pdf\", \"?\")."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:130
+msgid "Substrings that exclude a candidate link from the crawl."
+msgstr "Trechos de texto que excluem um link do rastreamento."
+
 #: frontend/src/components/Settings/Forms/FormBuilderPanel.vue:339
 msgid "Success message"
 msgstr "Mensagem de sucesso"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:111
+msgid "Summary"
+msgstr "Resumo"
 
 #. Option for the 'Weekly Off' (Select) field in DocType 'CRM Holiday List'
 #. Option for the 'Workday' (Select) field in DocType 'CRM Service Day'
@@ -9984,9 +10344,17 @@ msgstr ""
 msgid "Take a note..."
 msgstr "Faça uma anotação..."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:47
+msgid "Target Doctype"
+msgstr "Tipo de documento de destino"
+
 #: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.py:46
 msgid "Target Doctype must be one of: {0}"
 msgstr "O tipo de documento de destino deve ser um dos seguintes: {0}"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:56
+msgid "Target Fieldname"
+msgstr "Nome do campo de destino"
 
 #: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.py:72
 msgid "Target Value"
@@ -10105,6 +10473,19 @@ msgstr "Obrigado"
 msgid "The Condition '{0}' is invalid: {1}"
 msgstr "A condição '{0}' é inválida: {1}"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:30
+msgid "The enrichment result key to read the value from."
+msgstr "Chave do resultado do enriquecimento da qual o valor será lido."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run_change/crm_enrichment_run_change.json:14
+msgid "The fieldname on the run's reference record that this run wrote to."
+msgstr "Nome do campo do registro de referência alterado por esta execução."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:52
+msgid "The fieldname on the target doctype to write the value to."
+msgstr ""
+"Nome do campo no tipo de documento de destino em que o valor será gravado."
+
 #: crm/fcrm/doctype/crm_holiday_list/crm_holiday_list.py:64
 msgid "The holiday on {0} is not between From Date and To Date"
 msgstr "O feriado em {0} não é entre de Data e To Date"
@@ -10131,6 +10512,14 @@ msgstr ""
 "Taxa usada para converter a moeda da organização para a moeda base do CRM "
 "(definida nas configurações do CRM). É definida quando a moeda é adicionada "
 "pela primeira vez e não muda automaticamente."
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:52
+msgid ""
+"The value this rule resolves to when it matches (e.g. the social network "
+"\"linkedin\"). For Industry rules, use the Industry link instead."
+msgstr ""
+"Valor retornado quando esta regra corresponde (por exemplo, a rede social "
+"\"linkedin\"). Para regras de setor, use o vínculo Setor."
 
 #: frontend/src/components/Settings/PreferencesSettings.vue:23
 msgid "Theme"
@@ -10337,6 +10726,10 @@ msgstr "Período de tempo"
 msgid "Timezone"
 msgstr "Fuso horário"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:77
+msgid "Timing"
+msgstr "Duração"
+
 #. Label of the title (Data) field in DocType 'CRM Task'
 #. Label of the title (Data) field in DocType 'FCRM Note'
 #: crm/fcrm/doctype/crm_task/crm_task.json
@@ -10470,6 +10863,12 @@ msgstr "Número total de negócios ganhos com base na data de fechamento"
 msgid "Traceback"
 msgstr "Rastreamento"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule_pattern/crm_enrichment_rule_pattern.json:23
+msgid ""
+"Treat the pattern as a regular expression instead of a plain substring."
+msgstr ""
+"Tratar o padrão como expressão regular em vez de um trecho de texto simples."
+
 #: frontend/src/components/Settings/WorkflowAutomations/WorkflowAutomationInspector.vue:156
 #: frontend/src/components/Settings/WorkflowAutomations/workflowGraph.js:52
 msgid "Trigger"
@@ -10589,6 +10988,10 @@ msgstr "Digite para pesquisar"
 msgid "Type your message here..."
 msgstr "Digite sua mensagem aqui..."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:1
+msgid "URL"
+msgstr "URL"
+
 #: crm/fcrm/doctype/crm_twilio_settings/crm_twilio_settings.py:117
 msgid "Unable to connect to Twilio account to fetch applications."
 msgstr "Não foi possível conectar à conta do Twilio para buscar aplicativos."
@@ -10633,6 +11036,14 @@ msgstr "Desfazer enriquecimento?"
 #: frontend/src/components/EnrichFromWebsite.vue:5
 msgid "Undo last enrichment"
 msgstr "Desfazer último enriquecimento"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:104
+msgid "Undone By"
+msgstr "Desfeito por"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_run/crm_enrichment_run.json:98
+msgid "Undone On"
+msgstr "Desfeito em"
 
 #: frontend/src/components/ConditionsFilter/CFCondition.vue:166
 msgid "Ungroup Conditions"
@@ -10848,6 +11259,10 @@ msgstr "Use Novo negócio para criar um negócio para este contato."
 msgid "Use New Deal to create a deal for this organization."
 msgstr "Use Novo negócio para criar um negócio para esta organização."
 
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:87
+msgid "Use Sitemap"
+msgstr "Usar mapa do site"
+
 #: frontend/src/components/FieldLayout/Field.vue:657
 msgid "Use custom value"
 msgstr "Usar valor personalizado"
@@ -10862,6 +11277,10 @@ msgstr "Usar valor personalizado"
 #: crm/fcrm/doctype/crm_view_settings/crm_view_settings.json
 msgid "User"
 msgstr "Usuário"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_settings/crm_enrichment_settings.json:111
+msgid "User Agent"
+msgstr "Agente do usuário"
 
 #: frontend/src/components/Settings/Settings.vue:99
 msgid "User Configuration"
@@ -11080,6 +11499,11 @@ msgstr "Semanal"
 msgid "Weekly Off"
 msgstr "Folga semanal"
 
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:70
+#: crm/domain_enrichment/doctype/crm_enrichment_link_priority/crm_enrichment_link_priority.json:26
+msgid "Weight"
+msgstr "Peso"
+
 #: frontend/src/components/Modals/WhatsappTemplateSelectorModal.vue:10
 msgid "Welcome Message"
 msgstr "Mensagem de boas-vindas"
@@ -11122,6 +11546,10 @@ msgstr "Modelos do WhatsApp"
 #: frontend/src/components/Filter.vue:43 frontend/src/components/Filter.vue:83
 msgid "Where"
 msgstr "Onde"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_rule/crm_enrichment_rule.json:74
+msgid "Where the patterns are matched."
+msgstr "Local em que os padrões são comparados."
 
 #: frontend/src/components/ColumnSettings.vue:109
 msgid "Width"
@@ -11176,6 +11604,11 @@ msgstr "Automações de fluxo de trabalho"
 #: crm/fcrm/doctype/crm_service_level_agreement/crm_service_level_agreement.json
 msgid "Working Hours"
 msgstr "Horas de Trabalho"
+
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:62
+#: crm/domain_enrichment/doctype/crm_enrichment_field_mapping/crm_enrichment_field_mapping.json:62
+msgid "Write Policy"
+msgstr "Política de gravação"
 
 #: crm/automation/actions.py:301
 msgid "Write the notification text"
